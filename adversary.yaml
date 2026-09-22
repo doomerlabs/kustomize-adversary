@@ -1,4 +1,4 @@
-name: adversarylabs/container/kustomize
+name: container/kustomize
 version: 0.0.13
 description: Reviews Kustomize overlays for mutable resources, image tags, and literal secrets.
 
