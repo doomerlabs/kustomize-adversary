@@ -17764,25 +17764,6 @@ var spec = {
         "pattern": { "pattern": "^patchesStrategicMerge\\s*:", "flags": "m" },
         "requires": []
       }
-    },
-    {
-      "id": "kustomize.namespace-default",
-      "title": "Kustomization targets the default namespace",
-      "summary": "Kustomization targets the default namespace",
-      "category": "hygiene",
-      "severity": "low",
-      "confidence": "high",
-      "whyItMatters": "Deploying real workloads into default defeats namespace-scoped RBAC, quotas, and policies.",
-      "impact": "Shared-namespace blast radius and policy gaps for production apps.",
-      "recommendation": "Create and target a dedicated namespace per app/environment.",
-      "complexity": "trivial",
-      "tags": ["hygiene", "namespace"],
-      "match": {
-        "kind": "content",
-        "files": [...KUSTOMIZATION_FILES],
-        "pattern": { "pattern": "^namespace:\\s*default\\s*$", "flags": "im" },
-        "requires": []
-      }
     }
   ]
 };
