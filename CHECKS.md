@@ -10,4 +10,3 @@
 | `kustomize.latest-image` | Medium | Image overrides using mutable `latest`, `main`, or `edge` tags |
 | `kustomize.name-suffix-hash-disabled` | Medium | `generatorOptions.disableNameSuffixHash: true` |
 | `kustomize.deprecated-patches-strategic-merge` | Low | Use of the deprecated `patchesStrategicMerge` field |
-| `kustomize.namespace-default` | Low | Kustomizations that explicitly target the `default` namespace |

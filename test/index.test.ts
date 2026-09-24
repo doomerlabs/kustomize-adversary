@@ -14,7 +14,6 @@ const ruleCases = [
   { key: "latest-image", id: "kustomize.latest-image" },
   { key: "name-suffix-hash-disabled", id: "kustomize.name-suffix-hash-disabled" },
   { key: "deprecated-patches-strategic-merge", id: "kustomize.deprecated-patches-strategic-merge" },
-  { key: "namespace-default", id: "kustomize.namespace-default" },
 ];
 
 test("every initial rule has focused vulnerable and clean coverage", async () => {
@@ -32,6 +31,11 @@ test("accepts a repository without applicable configuration", async () => {
   assert.deepEqual(output.findings, []);
   assert.equal(output.assessment?.risk, "none");
   assert.equal(output.opinion?.ship, true);
+});
+
+test("explicit default namespace is not a finding by itself", async () => {
+  const output = await review("clean/default-namespace");
+  assert.deepEqual(output.findings, []);
 });
 
 test("deprecated patchesStrategicMerge evidence points to the field", async () => {
